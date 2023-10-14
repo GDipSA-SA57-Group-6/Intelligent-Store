@@ -1,0 +1,96 @@
+﻿
+
+<!--声明文档类型，指示这是一个HTML文档。-->
+<!DOCTYPE html> 
+
+<!--HTML文档的根元素，指定文档的语言为英语。-->
+<html lang="en">
+<!--头部部分，包含了文档的元信息，不会在页面上显示-->
+    <head>
+    <!--指定文档的字符编码为UTF-8，以支持各种字符集-->
+        <meta charset="UTF-8" />
+    <!--设置视口的属性，用于响应式设计，使网页在不同设备上正确显示。-->
+        <meta name="viewport" content="width=device-width" initial-scale="1.0" />
+        <script>
+            src = "https://kit.fontawesome.com/64d58efce2.js"
+            crossorigin = "anonymous"
+        </script>
+    <!--引入了一个外部样式表文件 style.css，用于设置页面的样式。-->
+        <link rel="stylesheet" hfef="~/css/login.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <title>Login Page</title>
+    </head>
+
+<!--主体部分，包含了页面上的可见内容。-->
+    <body>
+    <!--一个容器 div，用于包装页面的内容。-->
+        <div class="container">
+        <!--用于包含登录和注册表单。-->
+            <div class="forms-container">
+            <!--用于包含登录和注册表单的内容-->
+                <div class="signin-signup">
+                <!--登录表单，具有指定的 CSS 类名 sign-in-form。-->
+                    <form method="post" action="/Login/Authenticate" class="sign-in-form">
+                     <!--表单的标题，显示为 "登录"。-->    
+                        <h2 class="title">Login</h2>
+                     <!-- 输入字段的容器，包含了一个图标和一个输入框。-->    
+                        <div class="input-field">
+                     <!--一个字体图标，表示用户。-->
+                            <i class="fas fa-user"></i>
+                     <!--文本输入框，用于输入用户名。-->
+                            <input type="text" name="username" placeholder="Username" />
+                        </div>
+                     <!-- 输入字段的容器，包含了一个图标和一个输入框。-->
+                        <div class="input-field">
+                     <!--一个字体图标，表示密码。-->
+                            <i class="fas fa-lock"></i>
+                            <input type="password" name="password" placeholder="Password" />    
+                        </div>
+                     <!--提交按钮-->
+                        <input type="submit" value="Login" class="btn solid" />
+                        
+                        <p class="social-text">Log in through the following platforms</p>
+                    <!--包含了一组社交媒体图标的容器。-->
+                        <div class="social-media">
+                        <a href="#" class="social-icon" style="color: #003566">
+                            <i class="bi bi-wechat"></i>
+                            </a>
+                        <a href="#" class="social-icon" style="color: #003566">
+                                <i class="bi bi-tencent-qq"></i>
+                            </a>
+                        <a href="#" class="social-icon" style="color: #003566">
+                                <i class="bi bi-alipay"></i>
+                            </a>
+                        <a href="#" class="social-icon" style="color: #003566">
+                                <i class="bi bi-github"></i>
+                            </a>
+                        </div>
+                    </form>
+
+                    
+                    
+                </div>
+            </div>
+
+
+            <div class="panels-container">
+                <div class="panels left-panel">
+                            <div class="content" >
+                                <h3 style="color:white">New here?</h3>
+                                <p style="color: white">
+                                    Hey Bro! Welcome, we are all waiting for you, click the button to join us!
+                                </p>
+                                <button class="btn transparent" id="sign-up-btn" style="color: white; background-color: orange">
+                                    Sign up
+                                </button>
+                            </div>
+                <img src="~/img/signup.gif" class="image" alt="" style="width: 70%; margin: 0; border-radius: 30px;" />
+                        </div>
+
+                        
+                    </div>
+            </div>
+
+            <script src="~/js/login.js"></script>
+    </body>
+</html>
