@@ -23,8 +23,7 @@ window.onload = function () {
     xhr.onreadystatechange = function () {
         if (this.readyState == XMLHttpRequest.DONE && this.status == 200)
         {
-            // historyCart = JSON.parse(this.responseText);
-            localStorage.setItem("historyItems", this.responseText);
+            localStorage.setItem("historyItems", this.responseText, false); // 打开同步
         }
     }
     xhr.send();
@@ -40,18 +39,17 @@ window.onload = function () {
     generateHistoryCartItems();
 
     basket = JSON.parse(localStorage.getItem("data")) || [];
+
     calculation(); // 每次打开页面都会更新右上角购物车数字
 }
-
-
 
 
 window.generateHistoryCartItems = () => {
     if (historyCart.length !== 0) {
         return (historyCart.innerHTML = historyCartItems.map((x) => {
-            let { goodId, serialNumber, dateTime } = x;
+            let { goodId, serialNumbers} = x; // 解析
             let search = shopItemsData.find((x) => parseInt(x.id) === goodId) || [];
-            let { id, name, price, description, img } = search;
+            let { id, name, price, description, img } = search; // 这里名字要一样才能解析
 
             return `
             <div class="cart-item">
@@ -60,10 +58,12 @@ window.generateHistoryCartItems = () => {
                 <div class="title-price-x">
                     <h4 class="title-price">
                         <p>${name}</p>
-                        <p class="cart-item-price">$ ${price}</p>
                     </h4>
-                    <p>${serialNumber}</p>
-                    <p>${dateTime}</p>
+                </div>
+                <div class="dropdown-section">
+                    <select name="dropdown">
+                        ${serialNumbers.map(serialNumber => `<option value="${serialNumber}">${serialNumber}</option>`).join("") }
+                    </select>
                 </div>
             </div>
          </div>

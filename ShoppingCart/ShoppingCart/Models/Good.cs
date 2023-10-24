@@ -13,18 +13,18 @@ namespace ShoppingCart.Models
         public int ID { get; set; }
 
         [Required]
-        [MaxLength(20)]
+        [MaxLength(50)]
         public string Name { get; set; }
 
         [Required]
         public int Price { get; set; }
 
         [Required]
-        [MaxLength(20)]
+        [MaxLength(50)]
         public string Description { get; set; }
 
         [Required]
-        [MaxLength(30)]
+        [MaxLength(50)]
         public string Img { get; set; }
 
         // [ForeignKey("GoodID")] 不需要设置了 我在所连接的文件里重新设置

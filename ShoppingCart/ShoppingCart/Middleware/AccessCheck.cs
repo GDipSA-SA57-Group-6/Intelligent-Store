@@ -5,6 +5,7 @@ namespace ShoppingCart.Middleware
 {
 	/// <summary>
 	/// This is a middleware to check the right of accees to different controllers and pages.
+	/// 最后没有用到 发现没什么软用
 	/// </summary>
 	public class AccessCheck
 	{

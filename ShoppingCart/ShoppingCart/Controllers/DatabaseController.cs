@@ -28,23 +28,48 @@ namespace ShoppingCart.Controllers
         public IActionResult Index()
         {
             
-            /*
-            AddUser("admin", "pwd");
             
-            AddGood("FOPCS", 100, "Great course", "/img/1.jpg");
-            AddGood("OOPCS", 200, "Great course", "/img/2.jpg");
-            AddGood("Algorithm", 300, "Great course", "/img/3.jpg");
-            AddGood("OS", 200, "Great course", "/img/4.jpg");
-            AddGood("SQL", 100, "Great course", "/img/5.jpg");
-            AddGood("Art", 200, "Great course", "/img/6.jpg");
-            */
+            AddUser("admin", "pwd");
+
+			AddGood("Algorithm Design and Analysis", 76, "Advanced algorithms", "/img/1.jpg");
+			AddGood("Data Structures and Algorithms", 138, "Problem-solving techniques", "/img/2.png");
+			AddGood("Computer Networks", 57, "Network protocols", "/img/3.jpg");
+			AddGood("Operating Systems", 112, "Memory management", "/img/4.png");
+			AddGood("Software Engineering", 85, "Agile development", "/img/5.jpg");
+			AddGood("Database Management Systems", 67, "SQL and NoSQL databases", "/img/6.png");
+			AddGood("Web Development", 66, "Front-end and back-end technologies", "/img/7.jpg");
+			AddGood("Cybersecurity Fundamentals", 109, "Threat detection and prevention", "/img/8.png");
+			AddGood("Artificial Intelligence Basics", 83, "Machine learning concepts", "/img/9.jpg");
+			AddGood("Cloud Computing Technologies", 122, "Virtualization and distributed computing", "/img/10.jpg");
+			AddGood("Computer Graphics and Visualization", 117, "3D modeling and rendering", "/img/11.jpg");
+			AddGood("Mobile App Development", 66, "iOS and Android programming", "/img/12.jpg");
+			AddGood("Software Testing and Quality Assurance", 96, "Test automation techniques", "/img/13.png");
+			AddGood("Machine Learning Applications", 51, "Natural language processing", "/img/14.jpg");
+			AddGood("Information Security Management", 128, "Risk assessment and compliance", "/img/15.jpg");
+			AddGood("Internet of Things (IoT) Concepts", 97, "Embedded systems programming", "/img/16.png");
+			AddGood("Big Data Analytics", 56, "Data mining techniques", "/img/17.png");
+			AddGood("Computer Architecture and Organization", 133, "CPU design principles", "/img/18.jpg");
+			AddGood("Object-Oriented Programming", 69, "Design patterns and principles", "/img/19.png");
+			AddGood("Human-Computer Interaction", 85, "User interface design", "/img/20.png");
+			AddGood("Compiler Design and Construction", 114, "Lexical analysis and parsing", "/img/21.jpg");
+			AddGood("Information Retrieval Systems", 62, "Search engine algorithms", "/img/22.jpg");
+			AddGood("Computer Vision and Image Processing", 90, "Image recognition techniques", "/img/23.jpg");
+			AddGood("Cryptography Fundamentals", 77, "Encryption and decryption methods", "/img/24.jpg");
+			AddGood("Embedded Systems Programming", 57, "Real-time operating systems", "/img/25.jpg");
+			AddGood("Calculus I", 90, "Limits and derivatives", "/img/26.png");
+			AddGood("Linear Algebra", 110, "Vector spaces and linear transformations", "/img/27.jpg");
+			AddGood("Probability Theory", 95, "Probability distributions and random variables", "/img/28.jpg");
+			AddGood("Discrete Mathematics", 85, "Logic and set theory", "/img/29.jpg");
+			AddGood("Differential Equations", 100, "Ordinary and partial differential equations", "/img/30.png");
 
 
-            // 测试从数据库的查找是否成功 => 成功
-            // return Ok(GetGood(1) );
 
 
-            /*
+			// 测试从数据库的查找是否成功 => 成功
+			// return Ok(GetGood(1) );
+
+
+			/*
             // 测试数据库订单更新是否成功 => 成功
             List<BasketItem> list = new List<BasketItem>();
             list.Add(new BasketItem { id = 1, item = 1 });
@@ -53,7 +78,7 @@ namespace ShoppingCart.Controllers
             AddOrder(userId, list);
             */
 
-            return Ok("Successfully initialized database!");
+			return Ok("Successfully initialized database!");
         }
 
 
@@ -235,7 +260,27 @@ namespace ShoppingCart.Controllers
                 historyItems.Add(new HistoryItem(item.OrderGoodQuantity.GoodId, item.SerialNumber, item.OrderGoodQuantity.Order.DateTime));
             }
 
-            return Json(historyItems);
+            // 现在historyItems are all the items we bought, then can group them via LINQ
+            // So we need to build another data structure to group them
+
+            // 尝试用LINQ分类 并把分好的数据放进新的数据结构
+            List<HistoryItemGrouped> historyItemsGrouped = new List<HistoryItemGrouped>();
+            var iter = from item in historyItems 
+                       group item by item.GoodId; // 分类
+            // 遍历类
+            foreach(var grp in iter)
+            {
+                // 分组以后.Key代表按照什么标准进行分组的 .Count表示数量
+                HistoryItemGrouped historyItemGrouped = new HistoryItemGrouped(grp.Key);
+                foreach(var item in grp)
+                {
+                    historyItemGrouped.SerialNumbers.Add(item.SerialNumber);
+                }
+                historyItemsGrouped.Add(historyItemGrouped);
+            }
+
+            // 返回一个JSON对象 在Javascript里进行解析
+            return Json(historyItemsGrouped);
         }
     }
 }
