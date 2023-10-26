@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\86153\\Desktop\\Intelligent-Store\\ShoppingCart\\ShoppingCart\\ShoppingCart.csproj": {}
+    "D:\\SAIWA\\【NUS】\\SA4102_Programing\\ASPNET\\【CA】\\Intelligent-Store\\ShoppingCart\\ShoppingCart\\ShoppingCart.csproj": {}
   },
   "projects": {
-    "C:\\Users\\86153\\Desktop\\Intelligent-Store\\ShoppingCart\\ShoppingCart\\ShoppingCart.csproj": {
+    "D:\\SAIWA\\【NUS】\\SA4102_Programing\\ASPNET\\【CA】\\Intelligent-Store\\ShoppingCart\\ShoppingCart\\ShoppingCart.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\86153\\Desktop\\Intelligent-Store\\ShoppingCart\\ShoppingCart\\ShoppingCart.csproj",
+        "projectUniqueName": "D:\\SAIWA\\【NUS】\\SA4102_Programing\\ASPNET\\【CA】\\Intelligent-Store\\ShoppingCart\\ShoppingCart\\ShoppingCart.csproj",
         "projectName": "ShoppingCart",
-        "projectPath": "C:\\Users\\86153\\Desktop\\Intelligent-Store\\ShoppingCart\\ShoppingCart\\ShoppingCart.csproj",
-        "packagesPath": "C:\\Users\\86153\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\86153\\Desktop\\Intelligent-Store\\ShoppingCart\\ShoppingCart\\obj\\",
+        "projectPath": "D:\\SAIWA\\【NUS】\\SA4102_Programing\\ASPNET\\【CA】\\Intelligent-Store\\ShoppingCart\\ShoppingCart\\ShoppingCart.csproj",
+        "packagesPath": "C:\\Users\\zoudi\\.nuget\\packages\\",
+        "outputPath": "D:\\SAIWA\\【NUS】\\SA4102_Programing\\ASPNET\\【CA】\\Intelligent-Store\\ShoppingCart\\ShoppingCart\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\86153\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\zoudi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -80,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }

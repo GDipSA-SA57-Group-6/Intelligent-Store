@@ -20,7 +20,7 @@ namespace ShoppingCart.Data
         public static Guid AuthenticateUsernamePassword(string username, string password)
         {
             Guid userId  = Guid.Empty;
-            string connectionString = @"Server=SHUAIHAO; Database=ShoppingCartData; Integrated Security=true; Encrypt=false ";
+            string connectionString = @"Server=LAPTOP-JOPRJBM8\SQLEXPRESS; Database=ShoppingCartData; Integrated Security=true; Encrypt=false ";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();

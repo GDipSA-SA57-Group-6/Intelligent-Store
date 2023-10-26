@@ -29,7 +29,7 @@ a {
 .navbar {
     background-color: #1d2d44;
     color: white;
-    padding: 25px 60px; /* 导航框内部和边界间隔距离 第一个参数是和上下边界的距离 第二个是左右*/
+    padding: 25px 30px; /* 导航框内部和边界间隔距离 第一个参数是和上下边界的距离 第二个是左右*/
 
     /*!让一个division内部的元素，横向排列*/
     display: flex;
@@ -198,6 +198,7 @@ a {
 * ! styles rules for shopping-cart
 **/
 .history-cart {
+    margin-top: 120px;
     display: grid;
     grid-template-columns: repeat(1,700px);
     justify-content: center;
@@ -225,7 +226,12 @@ a {
     justify-content: space-between;
 }
 
-.title-price{
+.title-price-x-1 {
+    width: 240px;
+    display: flex;
+}
+
+.title-price {
     display: flex;
     align-items: center;
     gap: 10px;

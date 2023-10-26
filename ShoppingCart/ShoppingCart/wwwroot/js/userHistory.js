@@ -60,9 +60,14 @@ window.generateHistoryCartItems = () => {
                         <p>${name}</p>
                     </h4>
                 </div>
+                 <div class="title-price-x">
+                    <h6 class="title-price">
+                        <p>Quantity: ${serialNumbers.length}</p>
+                    </h6>
+                </div>
                 <div class="dropdown-section">
                     <select name="dropdown">
-                        ${serialNumbers.map(serialNumber => `<option value="${serialNumber}">${serialNumber}</option>`).join("") }
+                        ${serialNumbers.map((serialNumber) => `<option value="${serialNumber}">${serialNumber}</option>`).join("") }
                     </select>
                 </div>
             </div>

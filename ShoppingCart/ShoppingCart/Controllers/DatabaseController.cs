@@ -127,7 +127,7 @@ namespace ShoppingCart.Controllers
         public void AddOrder(Guid userId, List<BasketItem> list)
         {
             Guid orderId = new Guid();
-            DateTime dateTime = DateTime.Now.Date;
+            DateTime dateTime = DateTime.Now;
             User userToAdd = GetUser(userId);
 
             Order newOrder = new Order
