@@ -55,6 +55,28 @@ namespace ShoppingCart.Data
             }
         }
 
+        public static bool IsUsernameOkay(string username)
+        {
+			string connectionString = @"Server=SHUAIHAO; Database=ShoppingCartData; Integrated Security=true; Encrypt=false ";
+            using(SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+				string sql = @"SELECT Id FROM Users WHERE Name=@Username";
+                SqlParameter parameter1 = new SqlParameter
+                {
+                    ParameterName = @"Username",
+                    Value = username
+                };
+                SqlCommand cmd = new SqlCommand (sql, connection);
+                cmd.Parameters.Add(parameter1);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    return true;
+                }
+                return false;
+			}
+        }
         /*
         public static bool AuthenticateUsernamePassword(string username, string password)
         {

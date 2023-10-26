@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ShoppingCart.Data;
 using ShoppingCart.Models;
 using System.Diagnostics;
 
@@ -108,6 +109,19 @@ namespace ShoppingCart.Controllers
             string? userId = Request.Cookies["UserId"];
             if (userId == null) return null;
             else return userId;
+        }
+
+        public IActionResult IsUserNameOkay([FromBody] string username)
+        {
+            bool isUserNameOkay = UserData.IsUsernameOkay(username);
+            if(isUserNameOkay)
+            {
+                return Json(new {isOkay = true});
+            }
+            else
+            {
+                return Json(new { isOkay = false });
+            }
         }
 
     }
