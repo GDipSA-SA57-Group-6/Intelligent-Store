@@ -10,10 +10,12 @@
 		/// </summary>
 		public int GoodId { get; set; }
 		public List<Guid> SerialNumbers { get; set; }
-		public HistoryItemGrouped(int Id)
+		public DateTime LPDate { get; set; }
+		public HistoryItemGrouped(int Id, DateTime Date)
 		{
 			this.GoodId = Id;
 			SerialNumbers = new List<Guid>();
+			LPDate = Date;
 		}
 	}
 }

@@ -217,11 +217,11 @@ a {
     border-radius: 10px;
 
     display: flex;
-    width: 80%;
+    width: 100%;
 }
 
 .title-price-x {
-    width: 240px;
+    width: 80%;
     display: flex;
     justify-content: space-between;
 }

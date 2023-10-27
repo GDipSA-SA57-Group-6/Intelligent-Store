@@ -2902,24 +2902,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\arksh\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\zoudi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\arksh\\Desktop\\testBranch\\Intelligent-Store\\ShoppingCart\\ShoppingCart\\ShoppingCart.csproj",
+      "projectUniqueName": "D:\\SAIWA\\【NUS】\\SA4102_Programing\\ASPNET\\【CA】\\Intelligent-Store\\ShoppingCart\\ShoppingCart\\ShoppingCart.csproj",
       "projectName": "ShoppingCart",
-      "projectPath": "C:\\Users\\arksh\\Desktop\\testBranch\\Intelligent-Store\\ShoppingCart\\ShoppingCart\\ShoppingCart.csproj",
-      "packagesPath": "C:\\Users\\arksh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\arksh\\Desktop\\testBranch\\Intelligent-Store\\ShoppingCart\\ShoppingCart\\obj\\",
+      "projectPath": "D:\\SAIWA\\【NUS】\\SA4102_Programing\\ASPNET\\【CA】\\Intelligent-Store\\ShoppingCart\\ShoppingCart\\ShoppingCart.csproj",
+      "packagesPath": "C:\\Users\\zoudi\\.nuget\\packages\\",
+      "outputPath": "D:\\SAIWA\\【NUS】\\SA4102_Programing\\ASPNET\\【CA】\\Intelligent-Store\\ShoppingCart\\ShoppingCart\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\arksh\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\zoudi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -47,18 +47,36 @@ window.onload = function () {
 window.generateHistoryCartItems = () => {
     if (historyCart.length !== 0) {
         return (historyCart.innerHTML = historyCartItems.map((x) => {
-            let { goodId, serialNumbers} = x; // 解析
+            let { goodId, lpDate, serialNumbers} = x; // 解析
             let search = shopItemsData.find((x) => parseInt(x.id) === goodId) || [];
             let { id, name, price, description, img } = search; // 这里名字要一样才能解析
-
+            function padZero(number) {
+                return number < 10 ? '0' + number : number.toString();
+            }
+            let dateObj = new Date(lpDate);
+            let ys = dateObj.getFullYear();
+            let ms = padZero(dateObj.getMonth() + 1); // 月份从0开始
+            let ds = padZero(dateObj.getDate());
+            let hour = padZero(dateObj.getHours());
+            let min = padZero(dateObj.getMinutes());
+            let sec = padZero(dateObj.getSeconds());
             return `
             <div class="cart-item">
-            <img  width="180" src=${img} alt="">
+            <img  width="240" src=${img} alt="">
             <div class="details">
                 <div class="title-price-x">
                     <h4 class="title-price">
                         <p>${name}</p>
                     </h4>
+                </div>
+                <div class="title-price-x">
+                    <h8 class="title-price">
+                        <p>
+                            Quantity: ${serialNumbers.length}<br>
+                            Last Purchase Date: ${ys}-${ms}-${ds}<br>
+                            Last Purchase Time: ${hour}:${min}:${sec}
+                        </p>
+                    </h8>
                 </div>
                 <div class="dropdown-section">
                     <select name="dropdown">

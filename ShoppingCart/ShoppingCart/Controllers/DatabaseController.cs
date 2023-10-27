@@ -127,7 +127,7 @@ namespace ShoppingCart.Controllers
         public void AddOrder(Guid userId, List<BasketItem> list)
         {
             Guid orderId = new Guid();
-            DateTime dateTime = DateTime.Now.Date;
+            DateTime dateTime = DateTime.Now;
             User userToAdd = GetUser(userId);
 
             Order newOrder = new Order
@@ -270,8 +270,14 @@ namespace ShoppingCart.Controllers
             // 遍历类
             foreach(var grp in iter)
             {
+                DateTime LPDate = new DateTime(1, 1, 1);
+                foreach (var item in grp)
+                {
+                    if (LPDate >= item.DateTime) continue;
+                    LPDate = item.DateTime;
+                }
                 // 分组以后.Key代表按照什么标准进行分组的 .Count表示数量
-                HistoryItemGrouped historyItemGrouped = new HistoryItemGrouped(grp.Key);
+                HistoryItemGrouped historyItemGrouped = new HistoryItemGrouped(grp.Key, LPDate);
                 foreach(var item in grp)
                 {
                     historyItemGrouped.SerialNumbers.Add(item.SerialNumber);
