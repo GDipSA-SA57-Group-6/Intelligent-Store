@@ -2908,11 +2908,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\arksh\\Desktop\\.net workshop\\CA\\ShoppingCart\\ShoppingCart\\ShoppingCart.csproj",
+      "projectUniqueName": "C:\\Users\\arksh\\Desktop\\testBranch\\Intelligent-Store\\ShoppingCart\\ShoppingCart\\ShoppingCart.csproj",
       "projectName": "ShoppingCart",
-      "projectPath": "C:\\Users\\arksh\\Desktop\\.net workshop\\CA\\ShoppingCart\\ShoppingCart\\ShoppingCart.csproj",
+      "projectPath": "C:\\Users\\arksh\\Desktop\\testBranch\\Intelligent-Store\\ShoppingCart\\ShoppingCart\\ShoppingCart.csproj",
       "packagesPath": "C:\\Users\\arksh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\arksh\\Desktop\\.net workshop\\CA\\ShoppingCart\\ShoppingCart\\obj\\",
+      "outputPath": "C:\\Users\\arksh\\Desktop\\testBranch\\Intelligent-Store\\ShoppingCart\\ShoppingCart\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
